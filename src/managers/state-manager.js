@@ -5,8 +5,7 @@ let StateManager = {
     currentStateName: '',
     store: {
         score: 0,
-        totalLevels: 1,
-        currentLevel: 0
+        totalLevels: 1
     },
     clear() {
         const {width, height} = kontra.canvas;

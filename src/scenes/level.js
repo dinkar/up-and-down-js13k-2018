@@ -60,6 +60,15 @@ const Level = kontra.gameLoop({
         });
 
         this.assets.forEach(asset => asset.update());
+
+        // if (success) {
+        // StateManager.store.score = this.levelNumber * 100;
+        //     if (lastLevel) {
+        //         StateManager.switchToScene('game-over');
+        //     } else {
+        //         StateManager.switchToScene(`level-${this.levelNumber + 1}`);
+        //     }
+        // }
     },
     render() {
         this.assets.forEach(asset => asset.render());
@@ -71,6 +80,7 @@ Level.init = function (levelName) {
     const C_H = Constants.C_H;
     const levelNumber = parseInt(levelName.split('-')[1]);
     const levelConfig = LevelConfigs[levelNumber];
+    this.levelNumber = levelNumber;
 
     const floorMaps = levelConfig.floors;
     const thornMaps = levelConfig.thorns;
@@ -108,6 +118,6 @@ Level.ball = undefined;
 Level.floorTiles = [];
 Level.thornTiles = [];
 Level.assets = [];
-Level.levelName = '';
+Level.levelNumber = -1;
 
 export default Level;
