@@ -5,7 +5,7 @@ import floorFactory from '../assets/floor-factory';
 import thornFactory from '../assets/thorn-factory';
 import LevelConfigs from '../level-configs';
 
-const Level1 = kontra.gameLoop({
+const Level = kontra.gameLoop({
     update() {
         let ball = this.ball;
         const ctx = kontra.context;
@@ -67,7 +67,7 @@ const Level1 = kontra.gameLoop({
     }
 });
 
-Level1.init = function (levelName) {
+Level.init = function (levelName) {
     const C_H = Constants.C_H;
     const levelNumber = parseInt(levelName.split('-')[1]);
     const levelConfig = LevelConfigs[levelNumber];
@@ -92,7 +92,7 @@ Level1.init = function (levelName) {
     return this;
 };
 
-Level1.destroy = function () {
+Level.destroy = function () {
     kontra.keys.unbind('enter');
     this.assets.forEach(asset => {
         asset.ttl = 0;
@@ -104,10 +104,10 @@ Level1.destroy = function () {
     return this;
 };
 
-Level1.ball = undefined;
-Level1.floorTiles = [];
-Level1.thornTiles = [];
-Level1.assets = [];
-Level1.levelName = '';
+Level.ball = undefined;
+Level.floorTiles = [];
+Level.thornTiles = [];
+Level.assets = [];
+Level.levelName = '';
 
-export default Level1;
+export default Level;
