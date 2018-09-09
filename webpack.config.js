@@ -23,7 +23,7 @@ module.exports = {
             template: './index.html'
         }),
         new CopyWebpackPlugin([
-            ...KONTRA.map(file => {return { from: './node_modules/kontra/dist/' + file, to: file };}),
+            ...KONTRA.map(file => {return { from: './node_modules/kontra/src/' + file, to: file };}),
             { from: './src/style.css', to: 'style.css' }
         ]),
         new HtmlWebpackIncludeAssetsPlugin({ assets: [

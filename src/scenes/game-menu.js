@@ -19,7 +19,7 @@ const GameMenu = kontra.gameLoop({
 GameMenu.init = function () {
     StateManager.store.score = 0;
     kontra.keys.bind('enter', function () {
-        StateManager.switchToScene('level-1');
+        StateManager.switchToScene('level-0');
     });
     return this;
 };

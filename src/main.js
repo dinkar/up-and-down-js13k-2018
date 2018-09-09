@@ -10,7 +10,7 @@ let main = {
         StateManager
             .addScene('game-menu', GameMenu)
             .addScene('game-over', GameOver)
-            .addScene('level-1', Level1)
+            .addScene('level-0', Level1)
             .switchToScene('game-menu');
     }
 }
