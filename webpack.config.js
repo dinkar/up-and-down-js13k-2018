@@ -5,14 +5,13 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 
 const KONTRA = [
     'core.js',
-    'assets.js',
     'sprite.js',
     'gameLoop.js',
     'keyboard.js'
 ];
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -23,7 +22,7 @@ module.exports = {
             template: './index.html'
         }),
         new CopyWebpackPlugin([
-            ...KONTRA.map(file => {return { from: './node_modules/kontra/src/' + file, to: file };}),
+            ...KONTRA.map(file => {return { from: './node_modules/kontra/dist/' + file, to: file };}),
             { from: './src/style.css', to: 'style.css' }
         ]),
         new HtmlWebpackIncludeAssetsPlugin({ assets: [

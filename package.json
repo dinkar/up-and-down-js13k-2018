@@ -1,11 +1,12 @@
 {
-  "name": "js13k2018",
+  "name": "up-and-down-js13k-2018",
   "version": "1.0.0",
   "dependencies": {
     "kontra": "^4.0.1"
   },
   "scripts": {
-    "dev": "webpack --watch"
+    "dev": "webpack --watch",
+    "build": "webpack"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.5.2",
