@@ -5,12 +5,17 @@ const GameOver = kontra.gameLoop({
     render() {
         const ctx = kontra.context;
         const canvas = kontra.canvas;
-        canvas.style.background = Constants.WHITE;
+        canvas.style.background = Constants.FOREGROUND;
         ctx.font="30px Verdana";
-        ctx.fillStyle = Constants.BLACK;
-        ctx.fillText(Constants.G_O, 0, canvas.height/2);
-        ctx.fillText(`Your score is ${StateManager.store.score}`, 0, canvas.height/2 + 40);
-        ctx.fillText('Press Enter to continue', 0, canvas.height/2 + 80);
+        ctx.fillStyle = Constants.TEXT_COLOR;
+        let endText = '';
+        if (StateManager.store.levelsCompleted === StateManager.store.totalLevels) {
+            endText = `Yay! Congrats you've completed all the ${StateManager.store.totalLevels} levels`;
+        } else {
+            endText = `Whoops! You could finish ${StateManager.store.levelsCompleted} levels. Better luck new time.`
+        }
+        ctx.fillText(endText, 0, canvas.height/2);
+        ctx.fillText('Hit Enter to restart', 0, canvas.height/2 + 40);
     },
     update() {
 

@@ -2,13 +2,13 @@ import Constants from '../constants';
 
 let floorFactory = {
     getInstance(x, projectedY) {
-        let y = projectedY - Constants.F_H;
+        let y = Constants.C_H - projectedY - Constants.F_H;
         return kontra.sprite({
             x,
             y,
             width: Constants.F_W,
             height: Constants.F_H,
-            color: 'brown',
+            color: 'green',
             ttl: Infinity
         });
     }

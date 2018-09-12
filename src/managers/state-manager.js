@@ -1,11 +1,11 @@
-import Constants from "../constants";
-
 let StateManager = {
     states: {},
     currentStateName: '',
     store: {
-        score: 0,
-        totalLevels: 1
+        levelsCompleted: 0,
+        get totalLevels() {
+            return Object.keys(StateManager.states).filter(state => state.startsWith('level')).length;
+        }
     },
     clear() {
         const {width, height} = kontra.canvas;
@@ -32,7 +32,10 @@ let StateManager = {
             .start();
         this.currentStateName = sceneName;
         return this;
+    },
+    resetStore() {
+        this.store.levelsCompleted = 0;
     }
-}
+};
 
 export default StateManager;

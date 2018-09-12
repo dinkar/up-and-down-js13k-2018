@@ -1,15 +1,17 @@
 const Constants = {
     C_W: 1200,
-    C_H: 550,
+    C_H: 540,
     G_T: 'Gravity is a myth',
-    WHITE: '#fff',
     BLACK: '#000',
-    G_O: 'Game over',
+    FOREGROUND:'#000',
+    TEXT_COLOR: '#fff',
     B_R: 30,
-    T_W: 30,
-    T_H: 40,
-    F_W: 30,
-    F_H: 30
-}
+    T_W: 120,
+    T_H: 30,
+    F_W: 120,
+    F_H: 30,
+    E_P_W: 10,
+    E_P_H: 10
+};
 
 export default Constants;
